@@ -3,15 +3,12 @@
 import textwrap
 from pathlib import Path
 
-import pytest
-
 from vault.parser import (
     parse_frontmatter,
     parse_note,
     parse_tags,
     parse_wikilinks,
 )
-
 
 # ---------------------------------------------------------------------------
 # parse_frontmatter

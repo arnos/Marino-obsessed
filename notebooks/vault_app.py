@@ -494,7 +494,7 @@ def _main_layout(
 
 @app.cell
 def _render(layout):
-    layout
+    layout  # noqa: B018  — marimo displays the last expression as cell output
     return
 
 

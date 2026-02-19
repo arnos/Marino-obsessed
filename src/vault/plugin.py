@@ -27,7 +27,6 @@ from typing import Any, Protocol, runtime_checkable
 
 from vault.index import VaultIndex
 
-
 # ---------------------------------------------------------------------------
 # Descriptor
 # ---------------------------------------------------------------------------
@@ -53,7 +52,11 @@ class PluginDescriptor:
             entry=plugin["entry"],
             hooks=plugin.get("hooks", []),
             ui=plugin.get("ui", {}),
-            meta={k: v for k, v in plugin.items() if k not in {"id", "name", "version", "entry", "hooks", "ui"}},
+            meta={
+                k: v
+                for k, v in plugin.items()
+                if k not in {"id", "name", "version", "entry", "hooks", "ui"}
+            },
         )
 
 
@@ -91,7 +94,9 @@ def load_plugin(descriptor_path: Path) -> VaultPlugin:
     module = importlib.import_module(desc.entry)
 
     if not hasattr(module, "create_plugin"):
-        raise AttributeError(f"Plugin module '{desc.entry}' must expose a 'create_plugin(descriptor)' factory.")
+        raise AttributeError(
+            f"Plugin module '{desc.entry}' must expose a 'create_plugin(descriptor)' factory."
+        )
 
     plugin: VaultPlugin = module.create_plugin(desc)
     return plugin

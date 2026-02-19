@@ -110,7 +110,10 @@ def build_graph_spec(
                 y=alt.Y("y:Q", axis=None),
                 x2="x2:Q",
                 y2="y2:Q",
-                tooltip=[alt.Tooltip("source:N", title="from"), alt.Tooltip("target:N", title="to")],
+                tooltip=[
+                    alt.Tooltip("source:N", title="from"),
+                    alt.Tooltip("target:N", title="to"),
+                ],
             )
         )
 
