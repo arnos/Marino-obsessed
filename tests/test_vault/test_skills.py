@@ -5,8 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from vault.skills import SkillDescriptor, SkillIndex, _parse_skill
-
+from vault.skills import SkillIndex, _parse_skill
 
 # ---------------------------------------------------------------------------
 # Fixtures

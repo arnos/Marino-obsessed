@@ -67,7 +67,6 @@ class TestBuildGraphSpec:
         idx = VaultIndex(tmp_path)
         idx.build()
         # Should not raise even with no nodes/edges
-        from vault.graph import build_graph_spec
 
         build_graph_spec(idx)
 

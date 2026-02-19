@@ -7,7 +7,6 @@ import pytest
 
 from vault.plugin import PluginDescriptor, fire_hook, load_all_plugins, load_plugin
 
-
 # ---------------------------------------------------------------------------
 # PluginDescriptor.from_dict
 # ---------------------------------------------------------------------------

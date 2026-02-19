@@ -6,8 +6,7 @@ from pathlib import Path
 import pytest
 
 from vault.index import VaultIndex
-from vault.todos import TodoItem, TodoIndex, append_todo, resolve_todo, scan_todos
-
+from vault.todos import TodoItem, append_todo, resolve_todo, scan_todos
 
 # ---------------------------------------------------------------------------
 # Fixtures

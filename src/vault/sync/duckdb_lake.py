@@ -137,7 +137,7 @@ class DuckLakeSync:
         ).fetchone()
         if row is None:
             return None
-        return dict(zip(["slug", "title", "body", "tags", "links"], row))
+        return dict(zip(["slug", "title", "body", "tags", "links"], row, strict=False))
 
     def list_notes(self) -> list[str]:
         c = self._CATALOG

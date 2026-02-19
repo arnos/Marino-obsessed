@@ -24,7 +24,6 @@ import argparse
 import importlib.metadata
 import subprocess
 import sys
-import textwrap
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
