@@ -30,8 +30,9 @@ def _():
 
 @app.cell
 def _(add):
-    add(1, 2)
-    return
+    result = add(1, 2)
+    assert result == 3
+    return (result,)
 
 
 if __name__ == "__main__":

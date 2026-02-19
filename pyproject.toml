@@ -8,13 +8,15 @@ version = "0.1.0"
 dev = [
   "pre-commit>=4.0.1",
   "pytest>=8.3.4",
+  "pytest-cov>=6.0.0",
   "ruff>=0.8.3",
   "marimo>=0.13.14",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = ["./src"]
-testpaths = ["tests", "marimo_template"]
+testpaths = ["tests"]
+addopts = "--cov=src --cov-report=term-missing"
 
 [tool.ruff]
 line-length = 100
