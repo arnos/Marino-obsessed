@@ -1,0 +1,14 @@
+[plugin]
+id      = "canvas"
+name    = "tldraw Canvas"
+version = "0.1.0"
+entry   = "vault.canvas"
+hooks   = ["on_load", "on_index_update", "on_note_select"]
+
+[plugin.ui]
+# Rendered as the main panel when the Canvas tab is active
+main_panel = "build_canvas_html"
+
+[plugin.sync]
+# canvas_id used as the key in the sync backend
+canvas_id = "main"

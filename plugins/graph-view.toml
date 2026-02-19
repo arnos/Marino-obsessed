@@ -1,0 +1,10 @@
+[plugin]
+id      = "graph-view"
+name    = "Graph View"
+version = "0.1.0"
+entry   = "vault.graph"
+hooks   = ["on_load", "on_index_update", "on_note_select"]
+
+[plugin.ui]
+# Name of the callable exported by `vault.graph` that renders the panel
+sidebar_panel = "graph_panel_ui"

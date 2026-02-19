@@ -1,0 +1,10 @@
+[plugin]
+id      = "backlinks"
+name    = "Backlinks"
+version = "0.1.0"
+entry   = "vault.backlinks"
+hooks   = ["on_load", "on_note_select"]
+
+[plugin.ui]
+# Rendered below the note editor in the main view
+bottom_panel = "backlinks_panel_ui"
