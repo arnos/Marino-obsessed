@@ -8,13 +8,37 @@ version = "0.1.0"
 dev = [
   "pre-commit>=4.0.1",
   "pytest>=8.3.4",
+  "pytest-cov>=6.0.0",
   "ruff>=0.8.3",
   "marimo>=0.13.14",
+  # vault library
+  "pyyaml>=6.0.2",
+  "networkx>=3.4",
+  "numpy>=2.0.0",
+  "altair>=5.5.0",
+  "polars>=1.0.0",
+  "duckdb>=1.2.0",
+  "pyarrow>=19.0.0",
+  "httpx>=0.28.0",
+  # UI testing
+  "playwright>=1.50.0",
+  "pytest-playwright>=0.7.0",
+  "requests>=2.32.0",
 ]
 
 [tool.pytest.ini_options]
 pythonpath = ["./src"]
-testpaths = ["tests", "marimo_template"]
+testpaths = ["tests"]
+# Use -m e2e to run browser tests; they are excluded by default
+addopts = [
+  "--cov=src",
+  "--cov-report=term-missing",
+  "-m",
+  "not e2e",
+]
+markers = [
+  "e2e: End-to-end tests that require a live Marimo server and Playwright browsers",
+]
 
 [tool.ruff]
 line-length = 100

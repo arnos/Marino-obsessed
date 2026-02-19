@@ -9,5 +9,12 @@ wheels/
 # Virtual environments
 .venv
 
+# Coverage reports
+.coverage
+htmlcov/
+
+# Generated WASM notebook (built by scripts/build_wasm.py)
+notebooks/vault_app_wasm.py
+
 # IDE
 !.vscode/
