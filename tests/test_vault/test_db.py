@@ -3,12 +3,12 @@
 import textwrap
 from pathlib import Path
 
+import duckdb
 import polars as pl
 import pytest
 
 from vault.db import VaultDB
 from vault.index import VaultIndex
-
 
 # ---------------------------------------------------------------------------
 # Fixtures
@@ -69,7 +69,7 @@ class TestVaultDBQuery:
         assert isinstance(result, pl.DataFrame)
 
     def test_invalid_sql_raises(self, db: VaultDB):
-        with pytest.raises(Exception):
+        with pytest.raises(duckdb.Error):
             db.query("SELECT * FROM nonexistent_table")
 
 
